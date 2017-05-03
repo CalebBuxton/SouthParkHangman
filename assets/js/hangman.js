@@ -18,6 +18,24 @@ var letterSpaces
 var guesses
 var correct
 
+var input
+
+document.onkeypress = function(evt) {
+  evt = evt || window.event;
+  var charCode = evt.which || evt.keyCode;
+  var charStr = String.fromCharCode(charCode);
+  console.log(charStr);
+  var checker = '"' + charStr + '"';
+  var target = document.getElementById(charStr);
+  console.log("target value is" + target);
+  console.log("checker value is" + checker);
+
+  target.classList.add("disabledBtn");
+  target.setAttribute("disabled","true");
+
+  letterSelected(charStr);
+};
+
 newGame();
 
 resetGame.addEventListener("click", function(){
@@ -42,7 +60,7 @@ function createWordSpaces() {
 
 function createButtons() {
 	for(i = 0; i < alphabet.length; i++){
-		alphabetArea.innerHTML += '<button class="alphabetBtn"></button>';
+		alphabetArea.innerHTML += "<button class='alphabetBtn' id=" + alphabet[i] + "></button>";
 	}
 
 	for(i = 0; i < alphabet.length; i++){
