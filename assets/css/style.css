@@ -1,0 +1,157 @@
+@font-face {
+font-family: 'South Park :)Smilie version';
+font-style: normal;
+font-weight: normal;
+src: local('South Park :)Smilie version'), url('../font/south park.woff') format('woff');
+}
+
+body {
+	margin: 0 auto;
+	background: #AAA;
+	font-family: 'South Park :)Smilie version';
+}
+
+.main {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.console {
+	width: 950px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+header {
+	background: #945b47;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	font-family: 'South Park :)Smilie version';
+	font-weight: 700;
+	font-size: 30px;
+	color: white;
+	height: 100%;
+	padding: 40px;
+}
+
+h1 {
+	margin: 0;
+}
+
+h3 {
+	font-size: 40px;
+	margin: 10px auto;
+}
+
+#stripe {
+	width: 100%;
+	background: white;
+	height: 30px;
+	text-align: center;
+}
+
+#gameArea {
+	float: left;
+	width: 70%;
+}
+
+button {
+	font-size: 18px;
+	text-transform: uppercase;
+	outline: none;
+	padding: 10px;
+	width: 20%;
+	margin: 1.66%;
+	color: white;
+	background: steelblue;
+	border: none;
+}
+
+#resetGame {
+	margin: 0 auto;
+	background: white;
+	color: steelblue;
+	height: 100%;
+	font-size: 18px;
+	width: 15%;
+	padding: 0;
+	font-family: 'South Park :)Smilie version';
+}
+
+#resetGame:hover {
+	background: steelblue;
+	color: white;
+}
+
+.alphabetBtn {
+	border-radius: 15%;
+}
+
+#letters {
+	width: 20%;
+	float: left;
+	text-align: center;
+}
+
+#gameArea {
+	width: 70%;
+	float: right;
+}
+
+#alphabet {
+	width: 100%;
+}
+
+.disabledBtn {
+	cursor: not-allowed;
+	opacity: 0.4;
+}
+
+#wordSpaces {
+	width: 100%;
+}
+
+.wordSpace {
+
+	border-bottom: 2px solid black;
+	width: 10%;
+	display: inline-block;
+	margin: 10px;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 700;
+	font-family: 'South Park :)Smilie version';
+}
+
+.letter {
+	padding: 10px;
+	font-size: 30px;
+}
+
+#hangman {
+	width: 100%;
+	height: 500px;
+}
+
+#guessedLetters {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: 700;
+	font-size: 30px;
+}
+
+#gameResult {
+	font-size: 50px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.winner {
+	color: yellow;
+}
+
+.hidden {
+	display: none;
+}
