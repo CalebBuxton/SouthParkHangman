@@ -5,6 +5,27 @@ font-weight: normal;
 src: local('South Park :)Smilie version'), url('../font/south park.woff') format('woff');
 }
 
+#opening {
+	position: absolute;
+	top: 15%;
+	bottom: 25%;
+	left: 5%;
+	right: 5%;
+	height: 50%;
+	text-align: center;
+	background: white;
+	opacity: 0.9;
+}
+
+#opening > h1 {
+	color: red;
+	background: none;
+	padding-top: 10%;
+	height: 100%;
+	opacity: 1;
+
+}
+
 body {
 	margin: 0 auto;
 	background: #AAA;

@@ -12,26 +12,44 @@ var guessedLetters = document.getElementById("guessedLetters");
 var wordSpaces = document.getElementById("wordSpaces")
 var resetGame = document.getElementById("resetGame");
 var gameResult = document.getElementById("gameResult")
-var gameOver
+var gameOver = true;
 var winner
 var letterSpaces 
 var guesses
 var correct
+var opening = document.getElementById("opening")
+var gameOverAudio = document.getElementById("gameOverAudio");
+var themeSong = document.getElementById("themeSong");
+
 
 
 document.onkeypress = function(evt) {
   evt = evt || window.event;
   var charCode = evt.which || evt.keyCode;
   var charStr = String.fromCharCode(charCode);
+  if (gameOver) {
+  	themeSong.play();
+  	newGame();
+  }
+  else {
   var target = document.getElementById(charStr);
   target.classList.add("disabledBtn");
   target.setAttribute("disabled","true");
-  guessedLettersArr.push(charStr);
-  letterSelected(charStr);
-  guessedLetter(charStr);
+  var match = false;
+  for(var i = 0; i < guessedLettersArr.length; i++) {
+  	if(charStr === guessedLettersArr[i]) {
+  		match = true;
+  	}
+  }
+  if (!match) {
+  	guessedLettersArr.push(charStr);
+  	letterSelected(charStr);
+  	guessedLetter(charStr);
+  }
+}
 };
 
-newGame();
+
 
 resetGame.addEventListener("click", function(){
 	newGame();
@@ -76,6 +94,7 @@ function createButtons() {
 			alphabetBtn[i].classList.remove("disabledBtn");
 			alphabetBtn[i].setAttribute("disabled","false");
 		}
+		opening.classList.add("hidden");
 		alphabetArea.innerHTML = null;
 		resetGame.textContent = "New Word";
 		guessedTitle.textContent = " ";
@@ -150,6 +169,7 @@ function createButtons() {
 					revealLetter(i,pickedWordChars[i]);
 				}
 				gameResult.textContent = "Sorry, you lost..."
+				gameOverAudio.play();
 			}
 		}
 
