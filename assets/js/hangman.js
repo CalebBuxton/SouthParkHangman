@@ -18,22 +18,17 @@ var letterSpaces
 var guesses
 var correct
 
-var input
 
 document.onkeypress = function(evt) {
   evt = evt || window.event;
   var charCode = evt.which || evt.keyCode;
   var charStr = String.fromCharCode(charCode);
-  console.log(charStr);
-  var checker = '"' + charStr + '"';
   var target = document.getElementById(charStr);
-  console.log("target value is" + target);
-  console.log("checker value is" + checker);
-
   target.classList.add("disabledBtn");
   target.setAttribute("disabled","true");
-
+  guessedLettersArr.push(charStr);
   letterSelected(charStr);
+  guessedLetter(charStr);
 };
 
 newGame();
