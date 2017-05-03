@@ -132,12 +132,14 @@ button {
 
 #wordSpaces {
 	width: 100%;
+	text-align: center;
 }
 
 .wordSpace {
-
+	margin: 0 auto;
 	border-bottom: 2px solid black;
-	width: 10%;
+	width: auto;
+	min-width: 5%;
 	display: inline-block;
 	margin: 10px;
 	text-transform: uppercase;
