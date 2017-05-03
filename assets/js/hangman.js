@@ -20,7 +20,7 @@ var correct
 var opening = document.getElementById("opening")
 var gameOverAudio = document.getElementById("gameOverAudio");
 var themeSong = document.getElementById("themeSong");
-
+var respectAudio = document.getElementById("respect");
 
 
 document.onkeypress = function(evt) {
@@ -162,6 +162,7 @@ function createButtons() {
 			if (winner === true) {
 				gameResult.textContent = "You Won!"
 				gameResult.classList.add("winner")
+				respectAudio.play();
 			}
 			else {
 				pickedWordChars = pickedWord.split("");
